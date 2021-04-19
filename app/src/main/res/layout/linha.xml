@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    cardview:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/icone"
+            android:layout_width="96dp"
+            android:layout_height="83dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Icone"
+            android:maxWidth="8dp"
+            android:maxHeight="8dp"
+            android:padding="2dip"
+            android:src="@drawable/profile" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome da organizacao"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gorupCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Group count"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/membersCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mebers count"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/adminsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admins count"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,1 +1,4 @@
 # dikastis-android
+
+VEM AI.....
+
