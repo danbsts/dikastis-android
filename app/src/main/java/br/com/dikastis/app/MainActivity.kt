@@ -9,6 +9,7 @@ import android.view.MenuItem
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityMainBinding
+import br.com.dikastis.app.model.Constants
 
 class MainActivity : AppCompatActivity() {
 

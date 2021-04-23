@@ -1,9 +1,8 @@
-package br.com.dikastis.app
+package br.com.dikastis.app.model
 
-class Organization (
+class Team (
+    val id: String,
     val name: String,
-    val groupsCount: Int,
     val membersCount: Int,
     val adminsCount: Int) {
-
 }

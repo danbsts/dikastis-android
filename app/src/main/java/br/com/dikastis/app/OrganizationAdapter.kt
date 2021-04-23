@@ -3,16 +3,17 @@ package br.com.dikastis.app
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.dikastis.app.databinding.LinhaBinding
+import br.com.dikastis.app.databinding.OrganizationBoxBinding
+import br.com.dikastis.app.model.Organization
 
 class OrganizationAdapter (
-    private val organizations: Array<Organization>,
-    private val inflater: LayoutInflater) :
+        private val organizations: Array<Organization>,
+        private val inflater: LayoutInflater) :
         RecyclerView.Adapter<OrganizationViewHolder>() {
     override fun getItemCount(): Int = organizations.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrganizationViewHolder {
-        val binding = LinhaBinding.inflate(inflater, parent, false)
+        val binding = OrganizationBoxBinding.inflate(inflater, parent, false)
         return OrganizationViewHolder(binding)
     }
 
