@@ -1,10 +1,9 @@
-package br.com.dikastis.app.organization
+package br.com.dikastis.app.team
 
 import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import br.com.dikastis.app.databinding.TeamBoxBinding
 import br.com.dikastis.app.model.Team
-import br.com.dikastis.app.team.TeamActivity
 
 class TeamViewHolder (private val binding: TeamBoxBinding):
     RecyclerView.ViewHolder(binding.root) {

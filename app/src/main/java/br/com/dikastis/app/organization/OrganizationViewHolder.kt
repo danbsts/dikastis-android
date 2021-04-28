@@ -1,10 +1,9 @@
-package br.com.dikastis.app
+package br.com.dikastis.app.organization
 
 import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import br.com.dikastis.app.databinding.OrganizationBoxBinding
 import br.com.dikastis.app.model.Organization
-import br.com.dikastis.app.organization.OrganizationActivity
 
 class OrganizationViewHolder(private val binding: OrganizationBoxBinding):
     RecyclerView.ViewHolder(binding.root) {

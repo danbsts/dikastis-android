@@ -1,10 +1,9 @@
-package br.com.dikastis.app.team
+package br.com.dikastis.app.task
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.dikastis.app.databinding.TaskBoxBinding
-import br.com.dikastis.app.databinding.TeamBoxBinding
 import br.com.dikastis.app.model.Task
 
 class TaskAdapter (

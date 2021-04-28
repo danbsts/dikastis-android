@@ -1,10 +1,11 @@
-package br.com.dikastis.app
+package br.com.dikastis.app.organization
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.dikastis.app.databinding.OrganizationBoxBinding
 import br.com.dikastis.app.model.Organization
+import br.com.dikastis.app.organization.OrganizationViewHolder
 
 class OrganizationAdapter (
         private val organizations: Array<Organization>,

@@ -1,4 +1,4 @@
-package br.com.dikastis.app.team
+package br.com.dikastis.app.task
 
 import androidx.recyclerview.widget.RecyclerView
 import br.com.dikastis.app.databinding.TaskBoxBinding

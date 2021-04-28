@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityMainBinding
 import br.com.dikastis.app.model.Constants
+import br.com.dikastis.app.organization.OrganizationAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         recyclerViewOrganizations.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
-            adapter = OrganizationAdapter(Constants.organizations,layoutInflater)
+            adapter = OrganizationAdapter(Constants.organizations, layoutInflater)
         }
 
         setSupportActionBar(findViewById(R.id.toolbar))

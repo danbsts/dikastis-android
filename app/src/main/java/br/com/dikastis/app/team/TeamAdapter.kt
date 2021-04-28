@@ -1,4 +1,4 @@
-package br.com.dikastis.app.organization
+package br.com.dikastis.app.team
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
