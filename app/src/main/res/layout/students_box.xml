@@ -24,23 +24,17 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Team name"
+                android:text="Student Name"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/membersCount"
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mebers count"
+                android:text="Student Email"
                 android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/adminsCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Admins count"
-                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
