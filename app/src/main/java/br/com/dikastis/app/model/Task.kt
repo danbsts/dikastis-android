@@ -4,6 +4,7 @@ import java.time.LocalDateTime
 
 class Task (
     val name: String,
-    val endDate: LocalDateTime) {
+    val endDate: LocalDateTime,
+    val problems: Array<Problem>) {
 
 }
