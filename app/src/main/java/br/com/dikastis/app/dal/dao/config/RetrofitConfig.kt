@@ -1,5 +1,6 @@
-package br.com.dikastis.app.viewmodel.config
+package br.com.dikastis.app.dal.dao.config
 
+import br.com.dikastis.app.dal.dao.APIClient
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
 

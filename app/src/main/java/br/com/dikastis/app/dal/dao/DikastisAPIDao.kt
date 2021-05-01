@@ -1,8 +1,7 @@
 package br.com.dikastis.app.dal.dao
 
-import android.util.Log
 import br.com.dikastis.app.model.Organization
-import br.com.dikastis.app.viewmodel.config.RetrofitConfig
+import br.com.dikastis.app.dal.dao.config.RetrofitConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

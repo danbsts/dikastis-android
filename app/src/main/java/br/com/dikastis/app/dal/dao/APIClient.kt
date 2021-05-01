@@ -1,4 +1,4 @@
-package br.com.dikastis.app.viewmodel.config
+package br.com.dikastis.app.dal.dao
 
 import br.com.dikastis.app.model.Organization
 import retrofit2.Call
