@@ -10,8 +10,8 @@ object Constants {
             Submission("B", "print('hello')", "TLE", "Python", 1000)
     )
 
-    val daniel = Student("Daniel", "dmrb2@cin.ufpe.br", submissions)
-    val rodrigo = Student("Rodrigo", "rfrl@cin.ufpe.br", submissions)
+    val daniel = Student("Daniel", 1, 2, submissions)
+    val rodrigo = Student("Rodrigo", 2, 2, submissions)
 
     val students = arrayOf(daniel, rodrigo)
 

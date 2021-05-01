@@ -4,6 +4,7 @@ import java.time.LocalDateTime
 
 class Student (
         val name: String,
-        val email: String,
+        val total: Int,
+        val solved: Int,
         val submissions: Array<Submission>) {
 }
