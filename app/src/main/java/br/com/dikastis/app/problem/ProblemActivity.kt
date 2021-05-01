@@ -2,7 +2,9 @@ package br.com.dikastis.app.problem
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.BroadcastReceiver
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -18,6 +20,7 @@ import br.com.dikastis.app.model.Constants
 class ProblemActivity : AppCompatActivity() {
     private lateinit var binding : ActivityProblemBinding
     private lateinit var recordingManager : RecordingManager
+    private var receiver: BroadcastReceiver? = null
 
     private var submissionId : Int = 0
 
@@ -28,6 +31,7 @@ class ProblemActivity : AppCompatActivity() {
         binding = ActivityProblemBinding.inflate(layoutInflater)
         recordingManager = RecordingManager(this, binding)
         setContentView(binding.root)
+        configureReceiver()
 
         val recyclerViewStatus = binding.statusList
         val startAudioButton = binding.buttonStartAudio
@@ -36,21 +40,32 @@ class ProblemActivity : AppCompatActivity() {
         val shareAudioButton = binding.buttonShareAudio
 
         recyclerViewStatus.apply {
-            layoutManager = LinearLayoutManager(this@ProblemActivity, LinearLayoutManager.HORIZONTAL, false)
-            addItemDecoration(DividerItemDecoration(this@ProblemActivity, DividerItemDecoration.HORIZONTAL))
+            layoutManager = LinearLayoutManager(
+                this@ProblemActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+            addItemDecoration(
+                DividerItemDecoration(
+                    this@ProblemActivity,
+                    DividerItemDecoration.HORIZONTAL
+                )
+            )
             adapter = StatusAdapter(
                 Constants.submissions,
                 layoutInflater
             )
         }
 
-        if (submissionId != 0) {
-            updateToSubmission(submissionId)
-        }
-
         startAudioButton.setOnClickListener {
             if (!hasNecessaryPermissions()) {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO),0)
+                ActivityCompat.requestPermissions(
+                    this, arrayOf(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.RECORD_AUDIO
+                    ), 0
+                )
             } else {
                 recordingManager.startRecording()
             }
@@ -65,13 +80,19 @@ class ProblemActivity : AppCompatActivity() {
         }
 
         shareAudioButton.setOnClickListener {
-            startActivity(Intent.createChooser(recordingManager.shareRecording(), "Share audio result"))
+            startActivity(
+                Intent.createChooser(
+                    recordingManager.shareRecording(),
+                    "Share audio result"
+                )
+            )
         }
+
     }
 
-    @SuppressLint("SetTextI18n")
-    fun updateToSubmission(submissionId : Int) {
-        binding.submissionId.text = "Submission: $submissionId"
+    override fun onDestroy() {
+        unregisterReceiver(receiver)
+        super.onDestroy()
     }
 
     private fun hasNecessaryPermissions(): Boolean {
@@ -80,4 +101,10 @@ class ProblemActivity : AppCompatActivity() {
                 ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
     }
 
+    private fun configureReceiver() {
+        val filter = IntentFilter()
+        filter.addAction("br.com.dikastis.submissionChange")
+        receiver = ProblemBroadcastReceiver(binding)
+        registerReceiver(receiver, filter)
+    }
 }

@@ -21,9 +21,11 @@ class StatusViewHolder (private val binding: StatusBoxBinding):
 
         binding.root.setOnClickListener {
             val c = binding.status.context
-            val intentExplicito = Intent(c, ProblemActivity::class.java)
-            intentExplicito.putExtra("submissionId", submissionId)
-            c.startActivity(intentExplicito)
+            val intent = Intent()
+            intent.action = "br.com.dikastis.submissionChange"
+            intent.putExtra("submissionId", submissionId.toString())
+            intent.flags = Intent.FLAG_INCLUDE_STOPPED_PACKAGES
+            c.sendBroadcast(intent)
         }
     }
 }
