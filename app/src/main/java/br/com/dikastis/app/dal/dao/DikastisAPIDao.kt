@@ -24,4 +24,19 @@ class DikastisAPIDao {
             }
         })
     }
+
+    fun getOrganization(id: String, updateOrganization: (organization: Organization) -> Unit) {
+        api.getOrganization(id).enqueue(object : Callback<Organization?> {
+            override fun onResponse(call: Call<Organization?>?, response: Response<Organization?>?) {
+                val orgnaization: Organization? = response!!.body()
+                if (orgnaization != null) {
+                    return updateOrganization(orgnaization)
+                }
+            }
+
+            override fun onFailure(call: Call<Organization?>, t: Throwable) {
+                throw t
+            }
+        })
+    }
 }

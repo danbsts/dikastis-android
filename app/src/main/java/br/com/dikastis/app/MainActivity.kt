@@ -1,7 +1,6 @@
 package br.com.dikastis.app
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
@@ -11,7 +10,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityMainBinding
 import br.com.dikastis.app.organization.OrganizationAdapter
-import br.com.dikastis.app.viewmodel.config.OrganizationViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
@@ -19,14 +17,14 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
-    private val organizationViewModel: OrganizationViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val recyclerViewOrganizations = binding.contentMain.organizationList
-        organizationViewModel.fetchOrganizations()
+        mainViewModel.fetchOrganizations()
 
         recyclerViewOrganizations.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                     DividerItemDecoration.VERTICAL
                 )
             )
-            organizationViewModel.organizations.observe(this@MainActivity, Observer {
+            mainViewModel.organizations.observe(this@MainActivity, Observer {
                 adapter = OrganizationAdapter(it.toTypedArray(), layoutInflater)
             })
         }

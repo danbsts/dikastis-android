@@ -43,9 +43,9 @@ object Constants {
     private val aLotOfTeams = teams + teams + teams + teams
 
     val organizations = arrayOf(
-        Organization("rodinho","Turma do Rodinho", 3, 10, 2, teams),
-        Organization("danzin","Turma do Danzin", 3, 10, 2, teams),
-        Organization("glaubinho", "Turma do Glaubinho", 3, 10, 2, teams),
-        Organization("cleydinha","Turma da Cleydinha", 3, 10, 2, aLotOfTeams)
+        Organization("rodinho","Turma do Rodinho", 3, 10, 2),
+        Organization("danzin","Turma do Danzin", 3, 10, 2),
+        Organization("glaubinho", "Turma do Glaubinho", 3, 10, 2),
+        Organization("cleydinha","Turma da Cleydinha", 3, 10, 2)
     )
 }
