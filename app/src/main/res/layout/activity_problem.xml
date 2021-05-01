@@ -48,6 +48,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_start_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dikastis"
+                android:text="@string/start"
+                android:layout_marginBottom="32dp"/>
+
+            <Button
+                android:id="@+id/button_pause_resume_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:text="@string/pause"
+                android:layout_marginBottom="32dp"/>
+
+            <Button
+                android:id="@+id/button_stop_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:text="@string/stop"
+                android:layout_marginBottom="32dp"/>
+
+            <Button
+                android:id="@+id/button_share_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:text="@string/share"
+                android:layout_marginBottom="32dp"/>
+
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
