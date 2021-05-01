@@ -6,8 +6,8 @@ import java.time.LocalDateTime
 
 object Constants {
     val submissions = arrayOf(
-            Submission("1", "print('hi')", "ACCEPTED", "Python", 1000),
-            Submission("2", "print('hello')", "TLE", "Python", 1000)
+            Submission("A", "print('hi')", "ACCEPTED", "Python", 1000),
+            Submission("B", "print('hello')", "TLE", "Python", 1000)
     )
 
     val daniel = Student("Daniel", "dmrb2@cin.ufpe.br", submissions)
@@ -24,8 +24,8 @@ object Constants {
     )
 
     val problems = arrayOf(
-            Problem("1", "Printa hi"),
-            Problem("2", "Printa hello")
+            Problem("A", "Printa hi"),
+            Problem("B", "Printa hello")
     )
 
     @RequiresApi(Build.VERSION_CODES.O)
