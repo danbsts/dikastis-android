@@ -7,7 +7,9 @@ import java.time.LocalDateTime
 object Constants {
     val submissions = arrayOf(
             Submission("A", "print('hi')", "ACCEPTED", "Python", 1000),
-            Submission("B", "print('hello')", "TLE", "Python", 1000)
+            Submission("B", "print('hello')", "TLE", "Python", 1000),
+            Submission("B", "print('hello')", "WA", "Python", 1000),
+            Submission("B", "print('hello')", "RTE", "Python", 1000)
     )
 
     val daniel = Student("Daniel", 1, 2, submissions)
