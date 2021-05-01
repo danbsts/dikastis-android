@@ -1,16 +1,23 @@
 package br.com.dikastis.app
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityMainBinding
 import br.com.dikastis.app.model.Constants
+import br.com.dikastis.app.model.Organization
 import br.com.dikastis.app.organization.OrganizationAdapter
+import br.com.dikastis.app.viewmodel.config.RetrofitConfig
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +31,12 @@ class MainActivity : AppCompatActivity() {
 
         recyclerViewOrganizations.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
+            addItemDecoration(
+                DividerItemDecoration(
+                    this@MainActivity,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
             adapter = OrganizationAdapter(Constants.organizations, layoutInflater)
         }
 
@@ -34,6 +46,22 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        val call: Call<Organization> =
+            RetrofitConfig().getOrganizationService().getOrganizations()
+        call.enqueue(object : Callback<Organization?> {
+            override fun onResponse(
+                call: Call<Organization?>?,
+                response: Response<Organization?>?
+            ) {
+                val cep: Organization? = response!!.body()
+                Log.i("AQUIIIIIIIIIIIII", cep.toString())
+            }
+
+            override fun onFailure(call: Call<Organization?>, t: Throwable) {
+                Log.e("DEU RUIM", t.message.toString())
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

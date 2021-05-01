@@ -23,7 +23,7 @@ object Constants {
         Team("cleydinha", "Bonde da cleyde", 2, 10, students),
         Team("zero", "Ninguem gosta de nois", 0, 0, students),
         Team("mais", "Sempre cabe mais um", 123, 4, students)
-    )
+    ).toList()
 
     val problems = arrayOf(
             Problem("A", "Printa hi"),
