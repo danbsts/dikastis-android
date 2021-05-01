@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface APIClient {
 
     @GET("/organizations")
-    fun getOrganizations() : Call<Organization>
+    fun getOrganizations() : Call<List<Organization>>
 }
