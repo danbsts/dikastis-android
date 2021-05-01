@@ -13,5 +13,6 @@
     <string name="stop">Stop</string>
     <string name="save">Save</string>
     <string name="share">Share</string>
+    <string name="audio_description">Record an audio and share with the student!</string>
 
 </resources>
