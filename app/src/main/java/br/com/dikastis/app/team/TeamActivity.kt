@@ -13,8 +13,6 @@ class TeamActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("Chegamos aqui")
-
         binding = ActivityTeamBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val recyclerViewTeams = binding.taskList
