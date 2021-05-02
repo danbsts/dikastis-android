@@ -5,9 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.dikastis.app.MainViewModel
 import br.com.dikastis.app.databinding.ActivityOrganizationBinding
-import br.com.dikastis.app.model.Constants
 import br.com.dikastis.app.team.TeamAdapter
 
 class OrganizationActivity : AppCompatActivity() {

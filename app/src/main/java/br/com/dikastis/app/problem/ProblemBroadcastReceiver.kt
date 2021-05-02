@@ -6,10 +6,12 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import br.com.dikastis.app.databinding.ActivityProblemBinding
-import br.com.dikastis.app.model.Constants
 import br.com.dikastis.app.model.Submission
 
-class ProblemBroadcastReceiver (private var binding: ActivityProblemBinding) : BroadcastReceiver() {
+class ProblemBroadcastReceiver (
+    private var binding: ActivityProblemBinding,
+    private var submissions: List<Submission>) : BroadcastReceiver()
+{
     override fun onReceive(context: Context?, intent: Intent?) {
         val id = intent?.getStringExtra("submissionId")
 
@@ -22,8 +24,7 @@ class ProblemBroadcastReceiver (private var binding: ActivityProblemBinding) : B
     @SuppressLint("SetTextI18n")
     fun updateToSubmission(submissionId: String) {
         binding.submissionId.text = "Submission: $submissionId"
-        // TODO: Call someone to receive submission by id
-        var submission : Submission = Constants.submissions[submissionId.toInt() - 1]
+        var submission : Submission = submissions[submissionId.toInt() - 1]
 
         binding.statusName.text = submission.status
         binding.languageName.text = "Language: " + submission.language
