@@ -39,13 +39,14 @@ class TaskActivity : AppCompatActivity(){
             })
         }
 
-        val button = binding.buttonChart
-        button.setOnClickListener {
-            val c = binding.buttonChart.context
-            val intentExplicito = Intent(c, OverviewActivity::class.java)
-            c.startActivity(intentExplicito)
-        }
-
+        taskViewModel.task.observe(this@TaskActivity, { task->
+            binding.buttonChart.setOnClickListener {
+                val c = binding.buttonChart.context
+                val intentExplicito = Intent(c, OverviewActivity::class.java)
+                intentExplicito.putExtra("problems", task.problems)
+                c.startActivity(intentExplicito)
+            }
+        })
     }
 
 }
