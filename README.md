@@ -22,7 +22,7 @@ Para facilitar no acesso a essa API a aplicação utiliza do Retrofit para reali
 
 Esse é a primeira tela do aplicativo, de cara o usuario pode ver uma lista de organizações do dikastis que ele tem acesso e alguns detalhes sobre ela.
 
-A lista de organizações foi feita utilizando um RecyclerView e quando um deles é clicado o professor será redirecionado para a tela de `Organization` onde verá mais detalhes.
+A lista de organizações foi feita utilizando um RecyclerView e possui detalhes como nome, numero de membros e numero de administradores, quando um deles é clicado o professor será redirecionado para a tela de `Organization` onde verá mais detalhes.
 
 ### Organization
 
@@ -52,7 +52,7 @@ Ele foi implementado utilizando a biblioteca [AAChartModel]("https://github.com/
 
 A Problem Activity é uma tela onde o professor pode ver detalhes de como o aluno está performando em um determinado problema.
 
-Atravez de uma RecyclerView horizontal o professor pode seleciona entre as submissões do aluno, podendo vizualizar o status final daquela solução com um icone indicativo e ao ser clicado mais detalhes aparecem na tela.
+Atravez de uma RecyclerView horizontal o professor pode seleciona entre as submissões do aluno, podendo vizualizar o status final daquela solução com um icone indicativo e ao ser clicado mais detalhes aparecem na tela, como a linguagem da submissão, tempo de execução e o codigo submetido.
 
 Os novos detalhes aparecem na tela atravez de um broadCast que é gerado pelo item da RecyclerView clicado e é recebido pela Activity, criando então os demais dados referentes a submissão selecionada.
 
