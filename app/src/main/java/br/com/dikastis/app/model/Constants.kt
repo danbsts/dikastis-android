@@ -32,12 +32,12 @@ object Constants {
 
     @RequiresApi(Build.VERSION_CODES.O)
     val tasks = arrayOf(
-        Task("minha taskinha", LocalDateTime.of(2021, 4, 22, 23, 40), problems),
-        Task("nossa taskinha", LocalDateTime.of(2021, 4, 22, 23, 40), problems),
-        Task("taskinha deles", LocalDateTime.of(2021, 4, 22, 23, 40), problems),
-        Task("taskinha delas", LocalDateTime.of(2021, 4, 22, 23, 40), problems),
-        Task("taskinha de ninguem", LocalDateTime.of(2021, 4, 22, 23, 40), problems),
-        Task("taskinha de todos", LocalDateTime.of(2021, 4, 22, 23, 40), problems)
+        Task("1","minha taskinha", "2021-05-01T10:00:00Z", problems),
+        Task("1","nossa taskinha", "2021-05-01T10:00:00Z", problems),
+        Task("1","taskinha deles", "2021-05-01T10:00:00Z", problems),
+        Task("1","taskinha delas", "2021-05-01T10:00:00Z", problems),
+        Task("1","taskinha de ninguem", "2021-05-01T10:00:00Z", problems),
+        Task("1","taskinha de todos", "2021-05-01T10:00:00Z", problems)
     )
 
     private val aLotOfTeams = teams + teams + teams + teams

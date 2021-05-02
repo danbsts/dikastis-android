@@ -1,6 +1,7 @@
 package br.com.dikastis.app.team
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +11,7 @@ import br.com.dikastis.app.task.TaskAdapter
 
 class TeamActivity : AppCompatActivity() {
     private lateinit var binding : ActivityTeamBinding
+    private val teamViewModel: TeamViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,19 +19,20 @@ class TeamActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val teamId = intent.getStringExtra("id")
-        val teamName = intent.getStringExtra("name")
-        binding.teamName.text = teamName
+        teamViewModel.fetchTeam(teamId)
 
         val recyclerViewTeams = binding.taskList
         recyclerViewTeams.apply {
             layoutManager = LinearLayoutManager(this@TeamActivity)
             addItemDecoration(DividerItemDecoration(this@TeamActivity, DividerItemDecoration.VERTICAL))
-            adapter = TaskAdapter(
-                Constants.tasks,
-                layoutInflater
-            )
+            teamViewModel.team.observe(this@TeamActivity, {
+                binding.teamName.text = it.name
+                adapter = TaskAdapter(
+                    it.tasks,
+                    layoutInflater
+                )
+            })
         }
-
     }
 
 }

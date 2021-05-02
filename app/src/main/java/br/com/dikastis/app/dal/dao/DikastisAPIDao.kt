@@ -1,7 +1,9 @@
 package br.com.dikastis.app.dal.dao
 
+import android.util.Log
 import br.com.dikastis.app.model.Organization
 import br.com.dikastis.app.dal.dao.config.RetrofitConfig
+import br.com.dikastis.app.model.Team
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,6 +37,22 @@ class DikastisAPIDao {
             }
 
             override fun onFailure(call: Call<Organization?>, t: Throwable) {
+                throw t
+            }
+        })
+    }
+
+    fun getTeam(id: String, updateTeam: (organization: Team) -> Unit) {
+        api.getTeam(id).enqueue(object : Callback<Team?> {
+            override fun onResponse(call: Call<Team?>?, response: Response<Team?>?) {
+                val team: Team? = response!!.body()
+                Log.i("MEU TIME AQUI OIA", team.toString())
+                if (team != null) {
+                    return updateTeam(team)
+                }
+            }
+
+            override fun onFailure(call: Call<Team?>, t: Throwable) {
                 throw t
             }
         })
