@@ -6,7 +6,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="chart_view">Chart View</string>
+    <string name="chart_view">View chart</string>
     <string name="start">Start</string>
     <string name="pause">Pause</string>
     <string name="resume">Resume</string>
@@ -15,8 +15,8 @@
     <string name="share">Share</string>
     <string name="audio_description">Record an audio and share with the student!</string>
     <string name="organization_name_loading">Loading...</string>
-    <string name="task_name_loading">Task name loading...</string>
-    <string name="student_name_loading">Student name loading...</string>
+    <string name="task_name_loading">Loading...</string>
+    <string name="student_name_loading">Loading...</string>
     <string name="team_description_text">Here you can find all tasks scheduled for the team.</string>
     <string name="organization_list">Organizations</string>
     <string name="chart_title">Per problem status view</string>
