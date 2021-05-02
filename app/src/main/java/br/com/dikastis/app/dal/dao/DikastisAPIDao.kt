@@ -3,6 +3,7 @@ package br.com.dikastis.app.dal.dao
 import android.util.Log
 import br.com.dikastis.app.model.Organization
 import br.com.dikastis.app.dal.dao.config.RetrofitConfig
+import br.com.dikastis.app.model.Submission
 import br.com.dikastis.app.model.Task
 import br.com.dikastis.app.model.Team
 import retrofit2.Call
@@ -43,7 +44,7 @@ class DikastisAPIDao {
         })
     }
 
-    fun getTeam(id: String, updateTeam: (organization: Team) -> Unit) {
+    fun getTeam(id: String, updateTeam: (team: Team) -> Unit) {
         api.getTeam(id).enqueue(object : Callback<Team?> {
             override fun onResponse(call: Call<Team?>?, response: Response<Team?>?) {
                 val team: Team? = response!!.body()
@@ -59,12 +60,12 @@ class DikastisAPIDao {
         })
     }
 
-    fun getTask(id: String, updateTask: (organization: Task) -> Unit) {
+    fun getTask(id: String, updateTask: (task: Task) -> Unit) {
         api.getTask(id).enqueue(object : Callback<Task?> {
             override fun onResponse(call: Call<Task?>?, response: Response<Task?>?) {
-                val team: Task? = response!!.body()
-                if (team != null) {
-                    return updateTask(team)
+                val task: Task? = response!!.body()
+                if (task != null) {
+                    return updateTask(task)
                 }
             }
 
@@ -72,6 +73,20 @@ class DikastisAPIDao {
                 throw t
             }
         })
+    }
 
+    fun getSubmission(problemId: String, personId: String, updateSubmission: (submissions: List<Submission>) -> Unit) {
+        api.getSubmissions(problemId, personId).enqueue(object : Callback<List<Submission>?> {
+            override fun onResponse(call: Call<List<Submission>?>?, response: Response<List<Submission>?>?) {
+                val submissions: List<Submission>? = response!!.body()
+                if (submissions != null) {
+                    updateSubmission(submissions)
+                }
+            }
+
+            override fun onFailure(call: Call<List<Submission>?>, t: Throwable) {
+                throw t
+            }
+        })
     }
 }

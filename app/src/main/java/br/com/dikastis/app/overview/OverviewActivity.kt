@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import br.com.dikastis.app.R
 import br.com.dikastis.app.databinding.ActivityOverviewBinding
 import br.com.dikastis.app.model.Constants
-import br.com.dikastis.app.model.Problem
 import br.com.dikastis.app.model.Student
 import br.com.dikastis.app.model.Submission
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
@@ -27,23 +26,22 @@ class OverviewActivity : AppCompatActivity(){
 
         val chartView = binding.aaChartView
         chartView.apply {
-            setNameAndValue(Constants.students, Constants.problems)
+            setNameAndValue(Constants.students, arrayOf())
             aa_drawChartWithChartModel(aaChartModel)
         }
     }
 
-    fun setNameAndValue(students: Array<Student>, problems: Array<Problem>) {
-        var nomes : Array<String> = problems.map { problem -> problem.name }.toTypedArray()
-        var accepted : Array<Int> = Array(nomes.size) { 0 }
+    fun setNameAndValue(students: Array<Student>, problems: Array<String>) {
+        var accepted : Array<Int> = Array(problems.size) { 0 }
         var tried : Array<Int> = Array(accepted.size) { 0 }
 
         for (student : Student in students) {
-            for(i in nomes.indices) {
+            for(i in problems.indices) {
                 var submited = 0
                 var done = 0
-                println(nomes[i])
+                println(problems[i])
                 for(submission: Submission in student.submissions) {
-                    if(submission.problemId == nomes[i]) {
+                    if(submission.problemId == problems[i]) {
                         submited = 1
                         if(submission.status == "ACCEPTED") {
                             done = 1
@@ -61,7 +59,7 @@ class OverviewActivity : AppCompatActivity(){
         aaChartModel
             .title(getString(R.string.chart_title))
             .subtitle(getString(R.string.chart_description))
-            .categories(nomes.clone())
+            .categories(problems.clone())
             .series(
                 arrayOf(
                     AASeriesElement().name(getString(R.string.accepted)).data(acceptedResult),

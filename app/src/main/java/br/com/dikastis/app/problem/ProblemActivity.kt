@@ -8,6 +8,7 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -16,9 +17,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityProblemBinding
 import br.com.dikastis.app.model.Constants
+import br.com.dikastis.app.task.TaskViewModel
 
 class ProblemActivity : AppCompatActivity() {
     private lateinit var binding : ActivityProblemBinding
+    private val problemViewModel: ProblemViewModel by viewModels()
+
     private lateinit var recordingManager : RecordingManager
     private var receiver: BroadcastReceiver? = null
 
@@ -35,6 +39,7 @@ class ProblemActivity : AppCompatActivity() {
 
         val problemName = intent.getStringExtra("problemName")
         val studentName = intent.getStringExtra("studentName")
+        problemViewModel.fetchSubmissions(problemName, studentName)
 
         binding.problemName.text = "Problem: $problemName"
         binding.studentName.text = "Student: $studentName"
@@ -57,10 +62,12 @@ class ProblemActivity : AppCompatActivity() {
                     DividerItemDecoration.HORIZONTAL
                 )
             )
-            adapter = StatusAdapter(
-                Constants.submissions,
-                layoutInflater
-            )
+            problemViewModel.submissions.observe(this@ProblemActivity, {
+                adapter = StatusAdapter(
+                    it.toTypedArray(),
+                    layoutInflater
+                )
+            })
         }
 
         startAudioButton.setOnClickListener {

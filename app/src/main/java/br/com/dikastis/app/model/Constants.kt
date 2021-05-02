@@ -26,8 +26,8 @@ object Constants {
     ).toList()
 
     val problems = arrayOf(
-            Problem("A", "Printa hi"),
-            Problem("B", "Printa hello")
+            "A",
+            "B"
     )
 
     @RequiresApi(Build.VERSION_CODES.O)
