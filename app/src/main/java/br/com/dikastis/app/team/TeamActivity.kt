@@ -15,8 +15,12 @@ class TeamActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTeamBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val teamId = intent.getStringExtra("id")
+        val teamName = intent.getStringExtra("name")
+        binding.teamName.text = teamName
+
         val recyclerViewTeams = binding.taskList
-        val id = intent.getStringExtra("id")
         recyclerViewTeams.apply {
             layoutManager = LinearLayoutManager(this@TeamActivity)
             addItemDecoration(DividerItemDecoration(this@TeamActivity, DividerItemDecoration.VERTICAL))

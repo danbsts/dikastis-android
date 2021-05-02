@@ -18,9 +18,13 @@ class OrganizationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityOrganizationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val organizationId = intent.getStringExtra("id")
+        val organizationName = intent.getStringExtra("name")
+        binding.organizationName.text = organizationName
+
         val recyclerViewTeams = binding.teamList
-        val id = intent.getStringExtra("id")
-        organizationViewModel.fetchOrganization(id)
+        organizationViewModel.fetchOrganization(organizationId)
         recyclerViewTeams.apply {
             layoutManager = LinearLayoutManager(this@OrganizationActivity)
             addItemDecoration(DividerItemDecoration(this@OrganizationActivity, DividerItemDecoration.VERTICAL))

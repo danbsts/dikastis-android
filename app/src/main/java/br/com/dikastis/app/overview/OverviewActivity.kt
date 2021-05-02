@@ -2,6 +2,7 @@ package br.com.dikastis.app.overview
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import br.com.dikastis.app.R
 import br.com.dikastis.app.databinding.ActivityOverviewBinding
 import br.com.dikastis.app.model.Constants
 import br.com.dikastis.app.model.Problem
@@ -16,8 +17,6 @@ class OverviewActivity : AppCompatActivity(){
 
     val aaChartModel : AAChartModel = AAChartModel()
         .chartType(AAChartType.Bar)
-        .title("Overview da tarefa")
-        .subtitle("Numero de aceitos por aluno")
         .dataLabelsEnabled(true)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,11 +59,13 @@ class OverviewActivity : AppCompatActivity(){
         var triedResult : Array<Any>  = tried.map { i -> i }.toTypedArray()
 
         aaChartModel
+            .title(getString(R.string.chart_title))
+            .subtitle(getString(R.string.chart_description))
             .categories(nomes.clone())
             .series(
                 arrayOf(
-                    AASeriesElement().name("Accepted").data(acceptedResult),
-                    AASeriesElement().name("Tried").data(triedResult))
+                    AASeriesElement().name(getString(R.string.accepted)).data(acceptedResult),
+                    AASeriesElement().name(getString(R.string.tried)).data(triedResult))
             )
     }
 }

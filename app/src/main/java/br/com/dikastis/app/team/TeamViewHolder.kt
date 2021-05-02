@@ -14,6 +14,7 @@ class TeamViewHolder (private val binding: TeamBoxBinding):
             val c = binding.name.context
             val intentExplicito = Intent(c, TeamActivity::class.java)
             intentExplicito.putExtra("id", team.id)
+            intentExplicito.putExtra("name", team.name)
             c.startActivity(intentExplicito)
         }
         "${team.membersCount} members".also { binding.membersCount.text = it }
