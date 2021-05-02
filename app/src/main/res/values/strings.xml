@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">app</string>
+    <string name="app_name">Dikastis</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -14,5 +14,14 @@
     <string name="save">Save</string>
     <string name="share">Share</string>
     <string name="audio_description">Record an audio and share with the student!</string>
+    <string name="organization_name_loading">Organization name loading...</string>
+    <string name="task_name_loading">Task name loading...</string>
+    <string name="student_name_loading">Student name loading...</string>
+    <string name="team_description_text">Here you can find all tasks scheduled for the team.</string>
+    <string name="organization_list">Organization list</string>
+    <string name="chart_title">Per problem status view</string>
+    <string name="chart_description">Per problem status view</string>
+    <string name="accepted">Accepted</string>
+    <string name="tried">Tried</string>
 
 </resources>

@@ -18,7 +18,6 @@ class OverviewViewHolder(private val binding: StudentsBoxBinding, private val pr
         binding.button.setOnClickListener{
             val c = binding.name.context
             val intentExplicito = Intent(c, ProblemActivity::class.java)
-            Log.i("AQUI CARAI", binding.spinner.selectedItem.toString())
             intentExplicito.putExtra("id", binding.spinner.selectedItem.toString())
             intentExplicito.putExtra("name", student.name)
             c.startActivity(intentExplicito)
