@@ -14,7 +14,7 @@ class TaskViewHolder(private val binding: TaskBoxBinding) :
         binding.root.setOnClickListener {
             val c = binding.name.context
             val intentExplicito = Intent(c, TaskActivity::class.java)
-            intentExplicito.putExtra("id", task.name)
+            intentExplicito.putExtra("name", task.name)
             c.startActivity(intentExplicito)
         }
     }
