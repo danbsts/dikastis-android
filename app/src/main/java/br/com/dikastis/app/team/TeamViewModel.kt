@@ -3,7 +3,6 @@ package br.com.dikastis.app.team
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.dikastis.app.dal.dao.DikastisAPIDao
-import br.com.dikastis.app.model.Organization
 import br.com.dikastis.app.model.Team
 
 class TeamViewModel : ViewModel() {
