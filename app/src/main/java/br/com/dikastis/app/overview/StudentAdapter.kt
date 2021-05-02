@@ -8,23 +8,23 @@ import br.com.dikastis.app.databinding.StudentsBoxBinding
 import br.com.dikastis.app.model.Student
 
 
-class OverviewAdapter(
+class StudentAdapter(
     private val students: Array<Student>,
     private val problems: ArrayAdapter<String>,
     private val inflater: LayoutInflater
 ) :
-        RecyclerView.Adapter<OverviewViewHolder>() {
+        RecyclerView.Adapter<StudentViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OverviewViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
         val binding = StudentsBoxBinding.inflate(inflater, parent, false)
-        return OverviewViewHolder(binding, problems)
+        return StudentViewHolder(binding, problems)
     }
 
     override fun getItemCount(): Int {
         return students.size
     }
 
-    override fun onBindViewHolder(holder: OverviewViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         holder.bindTo(students[position])
     }
 
