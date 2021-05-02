@@ -14,6 +14,7 @@ class OrganizationViewHolder(private val binding: OrganizationBoxBinding):
             val c = binding.name.context
             val intentExplicito = Intent(c, OrganizationActivity::class.java)
             intentExplicito.putExtra("id", organization.id)
+            intentExplicito.putExtra("name", organization.name)
             c.startActivity(intentExplicito)
         }
         "${organization.groupsCount} groups".also { binding.gorupCount.text = it }
