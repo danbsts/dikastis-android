@@ -6,7 +6,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 
 class RetrofitConfig {
     var retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("http://192.168.1.105:3000")
+        .baseUrl("https://dikastis-api.herokuapp.com")
         .addConverterFactory(JacksonConverterFactory.create())
         .build()
 
