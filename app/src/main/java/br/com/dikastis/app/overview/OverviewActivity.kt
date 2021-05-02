@@ -1,15 +1,12 @@
 package br.com.dikastis.app.overview
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import br.com.dikastis.app.R
 import br.com.dikastis.app.databinding.ActivityOverviewBinding
-import br.com.dikastis.app.model.Constants
 import br.com.dikastis.app.model.Student
 import br.com.dikastis.app.model.Submission
-import br.com.dikastis.app.task.TaskViewModel
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
 import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement

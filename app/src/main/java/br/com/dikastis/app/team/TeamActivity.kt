@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityTeamBinding
-import br.com.dikastis.app.model.Constants
 import br.com.dikastis.app.task.TaskAdapter
 
 class TeamActivity : AppCompatActivity() {

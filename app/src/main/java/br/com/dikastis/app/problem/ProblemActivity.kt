@@ -16,8 +16,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityProblemBinding
-import br.com.dikastis.app.model.Constants
-import br.com.dikastis.app.task.TaskViewModel
+import br.com.dikastis.app.model.Submission
 
 class ProblemActivity : AppCompatActivity() {
     private lateinit var binding : ActivityProblemBinding
@@ -35,11 +34,13 @@ class ProblemActivity : AppCompatActivity() {
         binding = ActivityProblemBinding.inflate(layoutInflater)
         recordingManager = RecordingManager(this, binding)
         setContentView(binding.root)
-        configureReceiver()
 
         val problemName = intent.getStringExtra("problemName")
         val studentName = intent.getStringExtra("studentName")
         problemViewModel.fetchSubmissions(problemName, studentName)
+        problemViewModel.submissions.observe(this@ProblemActivity, {
+            configureReceiver(it)
+        })
 
         binding.problemName.text = "Problem: $problemName"
         binding.studentName.text = "Student: $studentName"
@@ -121,10 +122,10 @@ class ProblemActivity : AppCompatActivity() {
         )
     }
 
-    private fun configureReceiver() {
+    private fun configureReceiver(submissions: List<Submission>) {
         val filter = IntentFilter()
         filter.addAction("br.com.dikastis.submissionChange")
-        receiver = ProblemBroadcastReceiver(binding)
+        receiver = ProblemBroadcastReceiver(binding, submissions)
         registerReceiver(receiver, filter)
     }
 }
