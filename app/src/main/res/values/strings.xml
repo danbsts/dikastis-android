@@ -14,7 +14,7 @@
     <string name="save">Save</string>
     <string name="share">Share</string>
     <string name="audio_description">Record an audio and share with the student!</string>
-    <string name="organization_name_loading">Organization name loading...</string>
+    <string name="organization_name_loading">Loading...</string>
     <string name="task_name_loading">Task name loading...</string>
     <string name="student_name_loading">Student name loading...</string>
     <string name="team_description_text">Here you can find all tasks scheduled for the team.</string>
