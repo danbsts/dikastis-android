@@ -17,6 +17,26 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/problem_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/task_name_loading"
+                android:textColor="@color/dikastis"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/student_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/student_name_loading"
+                android:textColor="@color/dark_blue"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/statusList"
                 android:layout_width="wrap_content"
@@ -29,27 +49,26 @@
                 android:id="@+id/submissionId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Escolheu o prob"/>
+                android:textSize="20sp"
+                android:text="Select a submission listed above"/>
 
             <TextView
                 android:id="@+id/statusName"
+                android:textSize="25sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/languageName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/memoryUsed"
+                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/runtime"
+                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/code"
-                android:backgroundTint="@color/cardview_dark_background"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
