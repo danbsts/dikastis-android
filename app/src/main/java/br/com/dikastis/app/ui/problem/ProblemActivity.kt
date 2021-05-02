@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityProblemBinding
 import br.com.dikastis.app.data.model.Submission
 import br.com.dikastis.app.ui.problem.adapter.StatusAdapter
+import br.com.dikastis.app.ui.problem.helper.ProblemBroadcastReceiver
+import br.com.dikastis.app.ui.problem.helper.RecordingManager
 
 class ProblemActivity : AppCompatActivity() {
     private lateinit var binding : ActivityProblemBinding
@@ -25,8 +27,6 @@ class ProblemActivity : AppCompatActivity() {
 
     private lateinit var recordingManager : RecordingManager
     private var receiver: BroadcastReceiver? = null
-
-    private var submissionId : Int = 0
 
     @SuppressLint("ResourceAsColor", "SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.N)

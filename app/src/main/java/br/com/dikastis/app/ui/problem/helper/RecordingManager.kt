@@ -1,4 +1,4 @@
-package br.com.dikastis.app.ui.problem
+package br.com.dikastis.app.ui.problem.helper
 
 import android.annotation.SuppressLint
 import android.annotation.TargetApi

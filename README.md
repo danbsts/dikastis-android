@@ -1,4 +1,10 @@
-# dikastis-android
+# Dikastis Android
+
+Criado por:
+
+- Daniel Bastos - dmrb2
+- Rodrigo Rodrigues - rfrl
+
 
 ## Geral
 
@@ -26,19 +32,19 @@ A lista de organizações foi feita utilizando um RecyclerView e possui detalhes
 
 ### Organization
 
-A Organization Activity é uma tela onde o processor pode ver os times definidos para a organization selecionada anteriormente.
+A Organization Activity é uma tela onde o professor pode ver os times definidos para a organization selecionada anteriormente.
 
 A lista de times foi feita utilizando um RecyclerView e quando um deles é clicado o professor será redirecionado para a tela de `Team` onde verá mais detalhes.
 
 ### Team
 
-A Team Activity é uma tela onde o processor pode ver as tarefas definidas para o time selecionado.
+A Team Activity é uma tela onde o professor pode ver as tarefas definidas para o time selecionado.
 
 A lista de tarefas foi feita utilizando um RecyclerView e quando um deles é clicado o professor será redirecionado para a tela de `Task` onde verá mais detalhes.
 
 ### Task
 
-A Task Activity é uma tela onde o processor pode ver o andamento da tarefa selecionada anteriormente em uma visão individualizada por aluno.
+A Task Activity é uma tela onde o professor pode ver o andamento da tarefa selecionada anteriormente em uma visão individualizada por aluno.
 
 A lista de alunos foi feita utilizando RecyclerView e possui as informações de quantas das questões da tarefa foram respondidas por ele, alem disso temos um Spinner que seleciona uma certa questão da tarefa de um aluno e pode acompanhar mais detalhes sendo redirecionado para a tela de `Problem`.
 
@@ -46,7 +52,7 @@ A lista de alunos foi feita utilizando RecyclerView e possui as informações de
 
 O Overview Activity é uma tela onde o professor pode ver os detalhes agrupados da tarefa passada, apresentando um grafico com o numero de estudantes que tentaram(fizeram uma submissão) e que finalizaram(acertaram o problema).
 
-Ele foi implementado utilizando a biblioteca [AAChartModel]("https://github.com/AAChartModel/AAChartCore-Kotlin") que desenha a tela e forma o grafico dados os dados que foram fornecidos pela API.
+Ele foi implementado utilizando a biblioteca [AAChartModel](https://github.com/AAChartModel/AAChartCore-Kotlin) que desenha a tela e forma o grafico dados os dados que foram fornecidos pela API.
 
 ### Problem
 
