@@ -7,7 +7,7 @@ import br.com.dikastis.app.databinding.TeamBoxBinding
 import br.com.dikastis.app.model.Team
 
 class TeamAdapter (
-    private val teams: Array<Team>,
+    private val teams: List<Team>,
     private val inflater: LayoutInflater
 ) :
     RecyclerView.Adapter<TeamViewHolder>() {

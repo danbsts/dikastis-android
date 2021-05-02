@@ -1,31 +1,42 @@
 package br.com.dikastis.app
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.dikastis.app.databinding.ActivityMainBinding
-import br.com.dikastis.app.model.Constants
 import br.com.dikastis.app.organization.OrganizationAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val recyclerViewOrganizations = binding.contentMain.organizationList
+        mainViewModel.fetchOrganizations()
 
         recyclerViewOrganizations.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
-            adapter = OrganizationAdapter(Constants.organizations, layoutInflater)
+            addItemDecoration(
+                DividerItemDecoration(
+                    this@MainActivity,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
+            mainViewModel.organizations.observe(this@MainActivity, Observer {
+                adapter = OrganizationAdapter(it.toTypedArray(), layoutInflater)
+            })
         }
 
         setSupportActionBar(findViewById(R.id.toolbar))
