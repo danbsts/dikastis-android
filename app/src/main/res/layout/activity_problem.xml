@@ -13,33 +13,54 @@
         tools:layout_editor_absoluteY="184dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/problem_name"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/task_name_loading"
-                android:textColor="@color/dikastis"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/student_name"
-                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student: "
+                    android:textColor="@color/yellow"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/student_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/student_name_loading"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/student_name_loading"
-                android:textColor="@color/dikastis"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                tools:ignore="MissingConstraints" />
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Problem: "
+                    android:textColor="@color/yellow"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/problem_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/student_name_loading"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/statusList"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout_editor_absoluteX="151dp"
                 tools:layout_editor_absoluteY="176dp"
@@ -47,32 +68,42 @@
 
             <TextView
                 android:id="@+id/submissionId"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:text="Select a submission listed above"/>
 
             <TextView
                 android:id="@+id/statusName"
-                android:textSize="25sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textSize="30sp"
+                android:layout_marginVertical="10dp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/languageName"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/runtime"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/code"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:layout_marginTop="32dp"/>
+                android:layout_marginVertical="32dp"
+                android:textColor="@color/black" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -102,6 +133,7 @@
                     android:id="@+id/button_pause_resume_audio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     android:backgroundTint="@color/red"
                     android:text="@string/pause"
                     android:layout_marginBottom="32dp"/>
@@ -110,6 +142,7 @@
                     android:id="@+id/button_stop_audio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     android:backgroundTint="@color/red"
                     android:text="@string/stop"
                     android:layout_marginBottom="32dp"/>
@@ -118,6 +151,7 @@
                     android:id="@+id/button_share_audio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     android:backgroundTint="@color/red"
                     android:text="@string/share"
                     android:layout_marginBottom="32dp"/>

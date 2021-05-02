@@ -9,7 +9,6 @@ class StatusViewHolder (private val binding: StatusBoxBinding):
     RecyclerView.ViewHolder(binding.root) {
 
     fun bindTo(status: String, submissionId : Int) {
-        binding.status.text = status
         binding.submissionId.text = submissionId.toString()
 
         when (status) {
@@ -20,7 +19,7 @@ class StatusViewHolder (private val binding: StatusBoxBinding):
         }
 
         binding.root.setOnClickListener {
-            val c = binding.status.context
+            val c = binding.icone.context
             val intent = Intent()
             intent.action = "br.com.dikastis.submissionChange"
             intent.putExtra("submissionId", submissionId.toString())
