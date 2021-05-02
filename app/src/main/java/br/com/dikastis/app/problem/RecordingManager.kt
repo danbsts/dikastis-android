@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.media.MediaRecorder
 import android.net.Uri
 import android.os.Build
+import android.provider.Settings.Global.getString
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import br.com.dikastis.app.R
@@ -82,7 +83,7 @@ class RecordingManager(private val context: Context, private val binding: Activi
                 Toast.makeText(context, "Recording paused!", Toast.LENGTH_SHORT).show()
                 mediaRecorder?.pause()
                 recordingStopped = true
-                binding.buttonPauseResumeAudio.text = "Resume"
+                binding.buttonPauseResumeAudio.text = context.getString(R.string.resume)
             }else{
                 resumeRecording()
             }
@@ -105,13 +106,7 @@ class RecordingManager(private val context: Context, private val binding: Activi
     private fun resumeRecording() {
         Toast.makeText(context, "Recording restored!", Toast.LENGTH_SHORT).show()
         mediaRecorder?.resume()
-        binding.buttonPauseResumeAudio.text = "Pause"
+        binding.buttonPauseResumeAudio.text = context.getString(R.string.pause)
         recordingStopped = false
-    }
-
-    private fun hasMicrophone(): Boolean {
-        return context.packageManager.hasSystemFeature(
-            PackageManager.FEATURE_MICROPHONE
-        )
     }
 }

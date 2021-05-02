@@ -24,7 +24,7 @@ class ProblemActivity : AppCompatActivity() {
 
     private var submissionId : Int = 0
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint("ResourceAsColor", "SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +32,12 @@ class ProblemActivity : AppCompatActivity() {
         recordingManager = RecordingManager(this, binding)
         setContentView(binding.root)
         configureReceiver()
+
+        val problemName = intent.getStringExtra("problemName")
+        val studentName = intent.getStringExtra("studentName")
+
+        binding.problemName.text = "Problem: $problemName"
+        binding.studentName.text = "Student: $studentName"
 
         val recyclerViewStatus = binding.statusList
         val startAudioButton = binding.buttonStartAudio
@@ -99,6 +105,13 @@ class ProblemActivity : AppCompatActivity() {
         return ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                && hasMicrophone()
+    }
+
+    private fun hasMicrophone(): Boolean {
+        return packageManager.hasSystemFeature(
+            PackageManager.FEATURE_MICROPHONE
+        )
     }
 
     private fun configureReceiver() {
