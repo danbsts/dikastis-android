@@ -5,9 +5,9 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#1C1E21</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
-    <color name="dikastis">#1b7db3</color>
-    <color name="dark_blue">#1a00b1</color>
+    <color name="dikastis">#172B4D</color>
+    <color name="yellow">#EEBF4D</color>
 </resources>

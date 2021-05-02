@@ -42,8 +42,8 @@ class ProblemActivity : AppCompatActivity() {
             configureReceiver(it)
         })
 
-        binding.problemName.text = "Problem: $problemName"
-        binding.studentName.text = "Student: $studentName"
+        binding.problemName.text = problemName
+        binding.studentName.text = studentName
 
         val recyclerViewStatus = binding.statusList
         val startAudioButton = binding.buttonStartAudio

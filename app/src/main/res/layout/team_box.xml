@@ -10,43 +10,44 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dikastis"
+        android:background="@color/yellow"
+        android:padding="20dp"
         android:orientation="horizontal">
 
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team name"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Team name"
-                android:textColor="@color/white"
-                android:layout_marginLeft="3dp"
-                android:textSize="25sp"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/membersCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:text="Mebers count"
                 android:layout_marginLeft="3dp"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/adminsCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:text="Admins count"
                 android:layout_marginLeft="3dp"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

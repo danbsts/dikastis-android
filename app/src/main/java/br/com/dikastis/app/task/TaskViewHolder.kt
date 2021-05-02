@@ -10,7 +10,7 @@ class TaskViewHolder(private val binding: TaskBoxBinding) :
 
     fun bindTo(task: Task) {
         binding.name.text = task.name
-        binding.endDate.text = task.endDate.toString()
+        binding.endDate.text = task.endDate
         binding.root.setOnClickListener {
             val c = binding.name.context
             val intentExplicito = Intent(c, TaskActivity::class.java)
